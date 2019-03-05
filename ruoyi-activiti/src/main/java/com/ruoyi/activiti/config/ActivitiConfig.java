@@ -17,8 +17,12 @@ public class ActivitiConfig {
     public ProcessEngineConfiguration processEngineConfiguration(DataSource dataSource, PlatformTransactionManager transactionManager){
         SpringProcessEngineConfiguration processEngineConfiguration = new SpringProcessEngineConfiguration();
         processEngineConfiguration.setDataSource(dataSource);
+        //true:启动时检测数据库脚本是否和当前Activiti版本匹配，不匹配则修复数据库
+        //false:启动时不检测数据库脚本是否和当前Activiti版本匹配
+        //create-drop:启动时创建，销毁时删除数据库
         processEngineConfiguration.setDatabaseSchemaUpdate("true");
-        processEngineConfiguration.setDatabaseType("mysql");
+        //可以根据 Datasource 自动配置
+        processEngineConfiguration.setDatabaseType("postgres");
 
         processEngineConfiguration.setTransactionManager(transactionManager);
 

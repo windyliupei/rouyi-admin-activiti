@@ -1,0 +1,5 @@
+ALTER TABLE QRTZ_SIMPLE_TRIGGERS drop CONSTRAINT if exists qrtz_simple_triggers_sched_name_fkey;
+ALTER TABLE QRTZ_SIMPROP_TRIGGERS drop CONSTRAINT if exists qrtz_simprop_triggers_sched_name_fkey;
+ALTER TABLE QRTZ_CRON_TRIGGERS drop CONSTRAINT if exists qrtz_cron_triggers_sched_name_fkey;
+ALTER TABLE QRTZ_BLOB_TRIGGERS drop CONSTRAINT if exists qrtz_blob_triggers_sched_name_fkey;
+ALTER TABLE qrtz_triggers drop CONSTRAINT if exists qrtz_triggers_sched_name_fkey;

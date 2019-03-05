@@ -1,12 +1,12 @@
 --创建菜单
-INSERT INTO `ry`.`sys_menu` ( `menu_name`, `parent_id`, `order_num`, `url`, `menu_type`, `visible`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+INSERT INTO `daimler`.`sys_menu` ( `menu_name`, `parent_id`, `order_num`, `url`, `menu_type`, `visible`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
 VALUES ( '工作流程', '0', '4', '#', 'M', '0', '', 'fa fa-wrench', 'admin', '2018-12-05 07:48:35', '', NULL, '');
 SELECT @parentId := LAST_INSERT_ID();
-INSERT INTO `ry`.`sys_menu` ( `menu_name`, `parent_id`, `order_num`, `url`, `menu_type`, `visible`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+INSERT INTO `daimler`.`sys_menu` ( `menu_name`, `parent_id`, `order_num`, `url`, `menu_type`, `visible`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
 VALUES ( '模型管理',@parentId, '1', '/activiti/model', 'C', '0', 'activiti:model:view', '#', 'admin', '2018-12-05 07:49:10', '', NULL, '');
-INSERT INTO `ry`.`sys_menu` ( `menu_name`, `parent_id`, `order_num`, `url`, `menu_type`, `visible`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+INSERT INTO `daimler`.`sys_menu` ( `menu_name`, `parent_id`, `order_num`, `url`, `menu_type`, `visible`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
 VALUES ( '我的任务', @parentId, '2', '/activiti/task', 'C', '0', 'activiti:task:view', '#', 'admin', '2018-12-05 07:49:51', '', NULL, '');
-INSERT INTO `ry`.`sys_menu` ( `menu_name`, `parent_id`, `order_num`, `url`, `menu_type`, `visible`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+INSERT INTO `daimler`.`sys_menu` ( `menu_name`, `parent_id`, `order_num`, `url`, `menu_type`, `visible`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
 VALUES ('流程管理', @parentId, '3', '/activiti/process', 'C', '0', 'activiti:process:view', '#', 'admin', '2018-12-05 07:50:16', '', NULL, '');
 
 -- 创建组与用户关联视图
