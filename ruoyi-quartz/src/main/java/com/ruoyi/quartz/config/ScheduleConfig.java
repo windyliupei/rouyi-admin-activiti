@@ -31,6 +31,9 @@ public class ScheduleConfig
         prop.put("org.quartz.threadPool.threadPriority", "5");
         // JobStore配置
         prop.put("org.quartz.jobStore.class", "org.quartz.impl.jdbcjobstore.JobStoreTX");
+        //Store代理为pgsql
+        prop.put("org.quartz.jobStore.driverDelegateClass","org.quartz.impl.jdbcjobstore.PostgreSQLDelegate");
+
         // 集群配置
         prop.put("org.quartz.jobStore.isClustered", "true");
         prop.put("org.quartz.jobStore.clusterCheckinInterval", "15000");

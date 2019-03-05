@@ -230,7 +230,7 @@ create table sys_menu (
                         order_num 		int 			default 0,
                         url 				varchar(200) 	default '#',
                         menu_type 		char(1) 		default '',
-                        visible 			char(1) 		default 0,
+                        visible 			int4 		default 0,
                         perms 			varchar(100) 	default '',
                         icon 				varchar(100) 	default '#',
                         create_by         varchar(64)     default '',
